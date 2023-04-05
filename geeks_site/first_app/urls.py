@@ -21,6 +21,6 @@ app_name = 'first_app'
 
 urlpatterns = [
     path('register/', views.register, name='register'),
-    print('user_login',views.user_login,name= 'user_login'),
+    path('user_login',views.user_login,name= 'user_login'),
     path('forms/', views.Form, name='forms'),
 ]
