@@ -1,0 +1,54 @@
+{% extends "first_html/base.html" %}
+{% load static %}
+
+{% block body_block %}
+<div class="jumbotron">
+    {% if registered %}
+    <h1> Thanks for registration </h1>
+    {% else %}
+    <h1>
+        register here
+    </h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        {{ profile_form.as_p }}
+        <input type="submit" name="" value="Register">
+    </form>
+    {% endif %}
+</div>
+{% endblock %}
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
+<!--    <title>DJango list</title>-->
+
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Here is your list</h1>-->
+<!--<div class="container">-->
+<!--    <div class="row justify-content-center mt-5">-->
+<!--        <form method="POST">-->
+<!--            {{ user.as_p }}-->
+<!--            {% csrf_token %}-->
+<!--            <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div class="UserDJ">-->
+<!--    <ol>-->
+<!--        {% for user in users %}-->
+<!--        <li> User info</li>-->
+<!--        <ul>-->
+<!--            <li>Email ={{ user.email }}</li>-->
+<!--            <li>First name = {{ user.first_name }}</li>-->
+<!--            <li>last name = {{ user.last_name }}</li>-->
+<!--        </ul>-->
+<!--        {% endfor %}-->
+<!--    </ol>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
